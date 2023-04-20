@@ -1,0 +1,65 @@
+.answer{
+    display: flex;
+    width: 80%;
+    min-width: 500px;
+    height: 100px;
+    margin: 10px;
+}
+
+.contentAnswer {
+    position: relative;
+    display: flex;
+    flex: 1;
+}
+
+/*Manipulacoa para fazer o flip precisa ta em absolute e content em relative*/
+.front, .back{
+    position: absolute;
+    display: flex;
+    height: 100%;
+    width: 100%;
+    height: 100%;
+}
+.front{
+    align-items: center;
+    border-radius: 12px;
+    padding: 15px;
+    background-color: #fff;
+    color: #000;
+}
+.back > div{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+    border-radius: 12px;
+}
+
+.correct{
+    background-color: #2baa6d;
+}
+.wrong{
+    background-color: #e44a4c;
+}
+.correct .value, .wrong .value {
+    font-size: 1.5rem;
+}
+
+.letter {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 40px;
+    width: 40px;
+    border-radius: 20px;
+    font-weight: 700;
+    font-size: 1.3rem;
+    margin-right: 20px;
+    color: #fff;
+}
+
+.value{
+    font-size: 1.3rem;
+    font-weight: 700;
+}
