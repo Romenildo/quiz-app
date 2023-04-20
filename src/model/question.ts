@@ -1,3 +1,4 @@
+import { shuffle } from "../functions/array"
 import AnswerModel from "./answer"
 
 export default class QuestionModel {
@@ -8,7 +9,7 @@ export default class QuestionModel {
     #answers: AnswerModel[]
     #hit: boolean
 
-    constructor(id: number, statement:string, answers:AnswerModel[], hit:boolean){
+    constructor(id: number, statement:string, answers:AnswerModel[], hit = false){
         this.#id = id
         this.#statement = statement
         this.#answers = answers
@@ -33,5 +34,36 @@ export default class QuestionModel {
             if(answer.clicked) return true
         }
         return false
+    }
+
+    replyWith(index: number):QuestionModel{
+        const hit = this.#answers[index]?.clicked
+        const answers = this.#answers.map((res, i)=>{
+            const selectedAnswerd = index === i
+            const mustReveal = selectedAnswerd || res.correct
+            return mustReveal ? res.toReveal(): res
+        })
+
+        return new QuestionModel(this.#id, this.#statement, answers, hit)
+    }
+
+    shuffleAnswers():QuestionModel{
+        return new QuestionModel(
+            this.#id,
+            this.#statement,
+            shuffle(this.#answers),
+            this.#hit
+        )
+    }
+
+    toObject(){
+        return {
+            id: this.#id,
+            statement: this.#statement,
+            hit: this.#hit,
+            answered: this.answered,
+            answers: this.#answers.map(ans => ans.toObject()),
+            
+        }
     }
 }

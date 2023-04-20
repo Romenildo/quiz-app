@@ -12,6 +12,16 @@ export default class AnswerModel {
         this.#clicked = clicked
     }
 
+    static correct(value: string){
+        return new AnswerModel(value, true)
+    }
+
+    static wrong(value: string){
+        return new AnswerModel(value, false)
+
+    }
+
+
     get value(){
         return this.#value
     }
@@ -20,6 +30,18 @@ export default class AnswerModel {
     }
     get clicked(){
         return this.#clicked
+    }
+
+    toReveal(){
+        return new AnswerModel(this.#value, this.#correct, true)
+    }
+
+    toObject(){
+        return {
+            value: this.#value,
+            correct: this.#clicked,
+            clicked: this.#clicked
+        }
     }
 
 }
