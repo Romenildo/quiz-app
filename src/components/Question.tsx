@@ -1,11 +1,13 @@
 import QuestionModel from "../model/question"
 import styles from '../styles/Question.module.css'
 import Answer from "./Answer"
-import Statement from "./statement"
+import Statement from "./Statement"
+import Timer from "./Timer"
 
 interface QuestionProps{
     value: QuestionModel,
-    onResponse : (index: number) => void
+    onResponse : (index: number) => void,
+    onTimerComplete : () => void
 }
 
 const letters = [
@@ -35,6 +37,7 @@ export default function Question(props: QuestionProps){
     return(
         <div className={styles.question}>
             <Statement text={question.statement}/>
+            <Timer duration={10} onComplete={props.onTimerComplete}/>
             {renderAnswers()}
         </div>
     )

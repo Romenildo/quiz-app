@@ -29,6 +29,10 @@ export default class QuestionModel {
         return this.#hit
     }
 
+    get notAnswered() {
+        return !this.answered
+    }
+    
     get answered(){
         for(let answer of this.#answers){
             if(answer.clicked) return true

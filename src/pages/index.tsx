@@ -14,13 +14,18 @@ export default function Home() {
   const [question, setQuestion] = useState(q)
 
   const onResponse = (index: number)=>{
-    console.log(index)
     setQuestion(question.replyWith(index))
+  }
+  const onTimerComplete = ()=>{
+    if(question.notAnswered){
+      setQuestion(question.replyWith(-1))
+
+    }
   }
   
   return (
     <div style={{display:'flex', height:'100vh', alignItems:'center', justifyContent:'center' }}>
-      <Question value={question} onResponse={onResponse}/>
+      <Question value={question} onResponse={onResponse} onTimerComplete={onTimerComplete}/>
     </div>
   )
 }
