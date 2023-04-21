@@ -60,6 +60,14 @@ export default class QuestionModel {
         )
     }
 
+    // pode chamar diretamento do Answer.Model.metodoStatic
+    //nos demais precisa primeiro cirar uma nova instancia new Resposta, para ai sim usar resp.metodoDeInstancia
+    static fromObject(obj: QuestionModel): QuestionModel{
+        //percorrendo a lista de respostas e criando um alista de respostas model
+        const answers = obj.answers.map(resp=> AnswerModel.fromObject(resp))
+        return new QuestionModel(obj.id, obj.statement, answers, obj.hit)
+    }
+
     toObject(){
         return {
             id: this.#id,

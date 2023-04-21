@@ -3,6 +3,7 @@ import styles from '../styles/Timer.module.css'
 
 
 interface TimerProps{
+    key: any
     duration: number,
     onComplete: () => void
 }

@@ -36,6 +36,12 @@ export default class AnswerModel {
         return new AnswerModel(this.#value, this.#correct, true)
     }
 
+    // pode chamar diretamento do Answer.Model.metodoStatic
+    //nos demais precisa primeiro cirar uma nova instancia new Resposta, para ai sim usar resp.metodoDeInstancia
+    static fromObject(obj: AnswerModel): AnswerModel{
+        return new AnswerModel(obj.value, obj.correct, obj.clicked)
+    }
+
     toObject(){
         return {
             value: this.#value,
