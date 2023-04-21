@@ -16,7 +16,7 @@ export default function Answer(props: AnswerProps){
         <div className={styles.answer} onClick={()=>props.onResponse(props.index)}>
             <div className={styles.contentAnswer}>
                 
-                {!answer.clicked ?(
+                {answer.clicked ?(
                     <div className={styles.front}>
                         <div className={styles.letter} style={{backgroundColor: props.color}}>
                             {props.letter}
