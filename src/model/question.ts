@@ -41,14 +41,14 @@ export default class QuestionModel {
     }
 
     replyWith(index: number):QuestionModel{
-        const hit = this.#answers[index]?.clicked
+        const hit = this.#answers[index]?.correct
         const answers = this.#answers.map((res, i)=>{
             const selectedAnswerd = index === i
             const mustReveal = selectedAnswerd || res.correct
             return mustReveal ? res.toReveal(): res
         })
 
-        return new QuestionModel(this.#id, this.#statement, answers, hit)
+        return new QuestionModel(this.id, this.statement, answers, hit)
     }
 
     shuffleAnswers():QuestionModel{

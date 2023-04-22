@@ -10,7 +10,7 @@ export default function Home() {
 
   const router = useRouter()
   const [questionsId, setQuestionsId] = useState<number[]>([])
-  const [question, setQuestion] = useState<QuestionModel>(new QuestionModel(0,"",[]))
+  const [question, setQuestion] = useState<any>()
   const [contCorrectAnswer, setContCorrectAnswer] = useState<number>(0)
 
 

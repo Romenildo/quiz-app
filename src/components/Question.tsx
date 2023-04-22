@@ -21,11 +21,10 @@ const letters = [
 export default function Question(props: QuestionProps){
 
     const question = props.value
-
     function renderAnswers(){
         return question.answers.map((answer,i)=>{
             return <Answer 
-                        key={`${question.id}${i}`}
+                        key={`${question.id}-${i}`}
                         value={answer}
                         index={i}
                         letter={letters[i].value}

@@ -4,8 +4,7 @@ export default class AnswerModel {
     #value: string
     #correct: boolean
     #clicked: boolean
-    //#answered boolean
-
+    
     constructor(value:string, correct:boolean, clicked = false){
         this.#value = value
         this.#correct = correct
@@ -18,7 +17,6 @@ export default class AnswerModel {
 
     static wrong(value: string){
         return new AnswerModel(value, false)
-
     }
 
 
@@ -45,7 +43,7 @@ export default class AnswerModel {
     toObject(){
         return {
             value: this.#value,
-            correct: this.#clicked,
+            correct: this.#correct,
             clicked: this.#clicked
         }
     }
