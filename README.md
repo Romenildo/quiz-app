@@ -1,11 +1,11 @@
 # Projeto Quiz
 
-Projeto do curso de Next.js e React da Udemy da cod3r
+Projeto do curso de Next.js e React da Udemy da cod3r.   
 O projeto consiste em uma aplicação de quiz com um banco de dados de perguntas e respostas,
 O sistema embaralha as perguntas, então o usuário seleciona as respostas e o sistema mostra se acertou ou não,
 ao final mostra o resultado da rodada com a porcentagem de acertos.
 
-Projeto desenvoldido com as ferramentas de:
+Projeto desenvoldido com as ferramentas:
 <p align="center">
 
   ![Next JS](https://img.shields.io/badge/Next-black?style=for-the-badge&logo=next.js&logoColor=white)
@@ -31,4 +31,6 @@ Projeto desenvoldido com as ferramentas de:
  
  ## Aplicação Final
  ![](https://github.com/Romenildo/Treinamento-GIT/blob/master/imgs/projetos/quiz-app.gif)
+ 
+  ```   Obs: Os commits e comentários no código foram organizados com foco no aprendizado dos conteúdos para revisões futuras  ```
  
